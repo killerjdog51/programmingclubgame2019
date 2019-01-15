@@ -7,11 +7,13 @@ using namespace std;
 
 int player_x;
 int player_y;
-string map[10];
+const int size = 10;
+// #define size 10
+string map[size];
 
 void init(){
-    for(int i=0;i<10;i++){
-        if(i == 0 || i == 9){
+    for(int i=0;i<size;i++){
+        if(i == 0 || i == (size-1)){
             map[i] = "##########";
         }else{
             map[i] = "#        #";
@@ -39,7 +41,7 @@ void update(){
 
 void render(){
     system("clear");
-    for(int i  = 0;i < 10;i++){
+    for(int i  = 0;i < size;i++){
         cout << map[i] << endl;
     }
 }
